@@ -12,18 +12,21 @@ namespace _2605lesson
         {
             print(4);
             Console.WriteLine("============");
-
-
             printb(DaysOfTheWeek.Saturday);
-
-
-
-            Console.WriteLine("============");
-
-
+            Console.WriteLine("============");            
             Enum.GetNames(typeof(DaysOfTheWeek)).ToList().ForEach(s => Console.WriteLine(s));
             Console.WriteLine("============");
             DaysOfTheWeek[] days = (DaysOfTheWeek[])Enum.GetValues(typeof(DaysOfTheWeek));
+
+            printdishes(Dishes.FIRST | Dishes.MAIN | Dishes.DESSERT);
+        }
+
+        public static Dishes printdishes(Dishes dish)
+        {
+            Console.WriteLine(dish);
+            //if(dish.HasFlag(Dishes.DESSERT))
+            //    Console.WriteLine("yes dessert");
+            return dish | Dishes.SURPRISE;
         }
 
         public static void printb(DaysOfTheWeek day)
